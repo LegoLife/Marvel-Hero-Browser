@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include partials/head.ejs %>
+</head>
+<body>
+  <img class="banner" src="../images/banner.jpg" /><br><br><br>
+  <h1><%=character[0].realName%></h1><br>
+  <img class='superHero' src='<%= character[0].thumbnail.path + "."+ character[0].thumbnail.extension%>' />
+
+  <hr>
+  <p><%=character[0].description%></p>
+  <hr>
+
+
+      </body>
+      </html>

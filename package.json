@@ -1,0 +1,16 @@
+{
+  "name": "marvelherobrowser",
+  "version": "1.0.0",
+  "description": "Just messing around with the marvel API. I saved all of the characters into my own json file for faster loading times. Most characters are included, but I'm not sure if I have them all",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jake Steffen",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "underscore": "^1.8.3"
+  }
+}

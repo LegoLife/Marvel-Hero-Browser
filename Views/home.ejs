@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <% include partials/head.ejs %>
+</head>
+<body>
+
+  <div>
+    <img class="banner" src="images/banner.jpg" />
+
+
+  </div>
+  <h1>Marvel Superhero Explorer</h1>
+  <p>Search for a Superhero or click a hero below</p><br />
+  <input class="form-control" type="text" id="search">
+  <div id="posters-wrapper" class="content-padding clearfix">
+
+
+    <% for (var i = 0; i < data.length; i++) { %>
+
+      <a href='/hero/<%=data[i].id%>'>
+
+        <div name='<%= data[i].realName %>' id='<%= data[i].name %>' class="img" style="background-image:url('<%= data[i].thumbnail.path + "."+ data[i].thumbnail.extension%>');"></div>
+      </a>
+
+      <% } %>
+
+    </div>
+
+    <script type="text/javascript">
+    $(function(){
+      initializeSearch();
+      var $dialog = $("<div class='image' style='background-color:#FFF9C3;'></div>")
+
+      .dialog({
+        autoOpen: false,
+        height: 200,
+        width: 200
+      });
+    });
+
+
+      function initializeSearch(){
+        $('#search').keyup(function(){
+
+          var valThis = $(this).val();
+          $('.img').each(function(){
+            var text = $(this).attr('name').toLowerCase();
+            if(text.indexOf(valThis) == 0){
+              $(this).show()
+              return;
+            }else{
+              $(this).hide()
+              return;
+            }
+          })
+        });
+      }
+
+  </script>
+
+          </body>
+          </html>
